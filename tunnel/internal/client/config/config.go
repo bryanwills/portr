@@ -68,6 +68,7 @@ type Config struct {
 	HealthCheckInterval        int      `yaml:"health_check_interval"`
 	HealthCheckMaxRetries      int      `yaml:"health_check_max_retries"`
 	DisableTUI                 bool     `yaml:"disable_tui"`
+	EnableHttpReverseProxy     bool     `yaml:"enable_http_reverse_proxy"`
 	DisableUpdateCheck         bool     `yaml:"disable_update_check"`
 }
 
@@ -121,17 +122,18 @@ func (c Config) GetAdminAddress() string {
 }
 
 type ClientConfig struct {
-	ServerUrl             string
-	SshUrl                string
-	TunnelUrl             string
-	SecretKey             string
-	Tunnel                Tunnel
-	UseLocalHost          bool
-	Debug                 bool
-	EnableRequestLogging  bool
-	HealthCheckInterval   int
-	HealthCheckMaxRetries int
-	DisableTUI            bool
+	ServerUrl              string
+	SshUrl                 string
+	TunnelUrl              string
+	SecretKey              string
+	Tunnel                 Tunnel
+	UseLocalHost           bool
+	Debug                  bool
+	EnableRequestLogging   bool
+	HealthCheckInterval    int
+	HealthCheckMaxRetries  int
+	DisableTUI             bool
+	EnableHttpReverseProxy bool
 }
 
 func (c *ClientConfig) GetHttpTunnelAddr() string {
